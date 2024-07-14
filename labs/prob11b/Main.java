@@ -15,8 +15,8 @@ public class Main {
 		                  new Employee("Thomas", "Blake", 111000),
 		                  new Employee("Alice", "Richards", 101000),
 		                  new Employee("Donald", "Trump", 100000));
-		
-		
-	}
 
+		String printResult= LambdaLibrary.getEmployee.apply(list);
+		System.out.println(printResult);
+	}
 }
