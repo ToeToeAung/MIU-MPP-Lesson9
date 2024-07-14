@@ -5,16 +5,15 @@ import java.util.*;
 public class Or {
 
 	public static void main(String[] args) {
-		List<Simple> list = Arrays.asList(new Simple(false), new Simple(false), new Simple(true));
-
+		List<Simple> list = Arrays.asList(new Simple(false), new Simple(false), new Simple(false));
+		boolean flag=someSimpleIsTrue(list);
+		System.out.println(flag);
 	}
 	
-	public boolean someSimpleIsTrue(List<Simple> list) {
-		boolean accum = false;
-		for(Simple s: list) {
-			accum = accum || s.flag;
-		}
-		return accum;
+	public static boolean someSimpleIsTrue(List<Simple> list) {
+		return list.stream()
+				.map(Simple::getFlag)
+				.reduce(false,(x,y) -> x || y);
 	}
 
 }

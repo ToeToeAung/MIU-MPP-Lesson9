@@ -5,4 +5,9 @@ public class Simple {
 	Simple(boolean f) {
 		flag = f;
 	}
+
+	public boolean getFlag() {
+		return flag;
+	}
+
 }
